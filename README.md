@@ -5,6 +5,11 @@ Dans ce tutoriel, nous verrons comment effectuer des requêtes anonymes via le m
 
 ## Installation
 
+Nous pouvons tout d'abord installer __Tor__:
+```
+sudo apt update
+sudo apt install tor
+```
 Création d'un environnement virtuel
 ```
 virtualenv env
@@ -16,11 +21,6 @@ python -m pip install virtualenv
 Activez notre environnement virtuel
 ```
 source env/bin/activate
-```
-Nous pouvons ensuite installer __Tor__:
-```
-sudo apt update
-sudo apt install tor
 ```
 Puis relancer le service
 ```
