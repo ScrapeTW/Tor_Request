@@ -60,7 +60,7 @@ from torrequest import TorRequest
 ```
 Puis nous pouvons éxécuter notre requête:
 ```
-with TorRequest as tr:
+with TorRequest() as tr:
   tr.reset_identity()
   response = tr.get("http://ipecho.net/plain")
   print(response.text)
@@ -70,3 +70,5 @@ Vous pouvez maintenant sauvegarder votre fichier puis éxécuter le script:
 ```
 python tor_request.py
 ```
+
+Vous pouvez également retrouver le code dans le fichier (tor_request.py)[] du repo
