@@ -44,3 +44,29 @@ Sauvegarder le fichier puis relancer le service Tor:
 ```
 sudo /etc/init.d/tor restart
 ```
+Tor est maintenant correctement configurer, nous allons pouvoir passer à la pratique.
+##Èxécuter
+Nous allons installer __torrequest__, module de Python qui nous permettra d'accèder à la config de Tor
+```
+pip install torrequest
+```
+Une fois l'installation terminée, nous allons créer un fichier __tor_request.py__:
+```
+nano tor_request.py
+```
+Nous commençons par importer le module torrequest
+```
+from torrequest import TorRequest
+```
+Puis nous pouvons éxécuter notre requête:
+```
+with TorRequest as tr:
+  tr.reset_identity()
+  response = tr.get("http://ipecho.net/plain")
+  print(response.text)
+```
+Nous requêtons vers __ipecho.net__ pour connaître notre IP au moment de notre requête
+Vous pouvez maintenant sauvegarder votre fichier puis éxécuter le script:
+```
+python tor_request.py
+```
