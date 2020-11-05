@@ -22,7 +22,25 @@ Activez notre environnement virtuel
 ```
 source env/bin/activate
 ```
-Puis relancer le service
+Puis relancer le service Tor
+```
+sudo /etc/init.d/tor restart
+```
+## Configurer Tor
+Nous allons tout d'abord générer un hash
+```
+tor --hash-password <your_password>
+```
+Nous avons ensuite besoin de configurer notre fichier __torrc__, fichier de configuration de Tor
+```
+sudo nano /etc/tor/torrc
+```
+Nous allons décommenter plusieurs ligne:
+- SOCKSPort 9050
+- HashedControlPassword <your_hash_password> ( coller ici le hash que vous avez généré )
+- Cookie Authentication 1
+
+Sauvegarder le fichier puis relancer le service Tor:
 ```
 sudo /etc/init.d/tor restart
 ```
