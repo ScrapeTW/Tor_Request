@@ -1,6 +1,4 @@
-# Tor_Request
-Make Anonymous Request with TorRequests and Python
-
+# Tor_Request 🐍
 Dans ce tutoriel, nous verrons comment effectuer des requêtes anonymes via le module TorRequests de Python
 
 ## Installation
@@ -9,6 +7,10 @@ Nous pouvons tout d'abord installer __Tor__:
 ```
 sudo apt update
 sudo apt install tor
+```
+Puis relancer le service Tor
+```
+sudo /etc/init.d/tor restart
 ```
 Création d'un environnement virtuel
 ```
@@ -21,10 +23,6 @@ python -m pip install virtualenv
 Activez notre environnement virtuel
 ```
 source env/bin/activate
-```
-Puis relancer le service Tor
-```
-sudo /etc/init.d/tor restart
 ```
 ## Configurer Tor
 Nous allons tout d'abord générer un hash
